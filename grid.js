@@ -24,6 +24,16 @@ class Grid {
     }
   }
 
+  isNeighbourAlive(row, col) {
+    if (!this.cells[row] || this.cells[col]) {
+      return false;
+    }
+
+    const cell = this.cells[row][col];
+
+    return cell && cell.isAlive;
+  }
+
   countNeighbors(cell) {
     const { row, col } = cell;
     let count = 0;
@@ -57,7 +67,6 @@ class Grid {
   }
 
   compute() {
-    // TODO:
     const nextGrid = new Grid(this.size);
 
     for (let row = 0; row < nextGrid.size; row += 1) {
