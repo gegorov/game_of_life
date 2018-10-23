@@ -95,9 +95,25 @@ class Grid {
   }
 
   render() {
-    // TODO:
-  }
+    let output = '';
 
+    for (let row = 0; row < this.size; row += 1) {
+      for (let col = 0; col < this.size; col += 1) {
+        const cell = this.cells[row][col];
+
+        if (cell.isAlive) {
+          output = `${output} 🔴 `;
+        } else {
+          output = `${output} 🔵 `;
+        }
+
+        if (cell.col === this.size - 1) {
+          output = `${output}\r\n`;
+        }
+      }
+    }
+    return output;
+  }
 }
 
 module.exports = Grid;
