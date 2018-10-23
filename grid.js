@@ -24,6 +24,38 @@ class Grid {
     }
   }
 
+  countNeighbors(cell) {
+    const { row, col } = cell;
+    let count = 0;
+
+    if (this.isNeighbourAlive(row - 1, col - 1)) {
+      count += 1;
+    }
+    if (this.isNeighbourAlive(row - 1, col)) {
+      count += 1;
+    }
+    if (this.isNeighbourAlive(row - 1, col + 1)) {
+      count += 1;
+    }
+    if (this.isNeighbourAlive(row, col + 1)) {
+      count += 1;
+    }
+    if (this.isNeighbourAlive(row + 1, col + 1)) {
+      count += 1;
+    }
+    if (this.isNeighbourAlive(row + 1, col)) {
+      count += 1;
+    }
+    if (this.isNeighbourAlive(row + 1, col - 1)) {
+      count += 1;
+    }
+    if (this.isNeighbourAlive(row, col - 1)) {
+      count += 1;
+    }
+
+    return count;
+  }
+
   compute() {
     // TODO:
     const nextGrid = new Grid(this.size);
@@ -51,10 +83,6 @@ class Grid {
       this.cells = nextGrid.cells;
     }
     return this;
-  }
-
-  countNeighbors() {
-    // TODO:
   }
 
   render() {
