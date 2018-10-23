@@ -1,4 +1,4 @@
-
+const Grid = require('./grid');
 
 class Game {
   constructor(gridSize) {
