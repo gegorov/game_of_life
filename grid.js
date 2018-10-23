@@ -1,3 +1,5 @@
+const Cell = require('./cell');
+
 class Grid {
   constructor(size, randomize = false) {
     this.size = size;
