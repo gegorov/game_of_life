@@ -26,11 +26,41 @@ class Grid {
 
   compute() {
     // TODO:
+    const nextGrid = new Grid(this.size);
+
+    for (let row = 0; row < nextGrid.size; row += 1) {
+      for (let col = 0; col < nextGrid.size; col += 1) {
+        const cell = this.cells[row][col];
+        const nextCell = nextGrid.cells[row][col];
+        const numNeighbors = this.countNeighbors(cell);
+
+        if (cell.isAlive) {
+          if (numNeighbors < 2) {
+            nextCell.die();
+          } else if (numNeighbors === 2 || numNeighbors === 3) {
+            nextCell.live();
+          } else if (numNeighbors > 3) {
+            nextCell.die();
+          }
+        } else {
+          if (numNeighbors === 3) { // eslint-disable-line
+            nextCell.live();
+          }
+        }
+      }
+      this.cells = nextGrid.cells;
+    }
+    return this;
+  }
+
+  countNeighbors() {
+    // TODO:
   }
 
   render() {
     // TODO:
   }
+
 }
 
 module.exports = Grid;
