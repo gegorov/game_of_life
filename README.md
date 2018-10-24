@@ -1,3 +1,3 @@
 # GAME OF LIFE
 
-https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
+read about Game of Life on [wiki](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
