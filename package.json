@@ -1,0 +1,26 @@
+{
+  "name": "game_of_life",
+  "version": "0.0.1",
+  "description": "read about Game of Life on [wiki](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)",
+  "main": "gol.js",
+  "scripts": {
+    "test": "echo 'no tests :('",
+    "start": "node gol.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gegorov/game_of_life.git"
+  },
+  "keywords": [
+    "game",
+    "game_of_life",
+    "space",
+    "invaders"
+  ],
+  "author": "gegorov",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/gegorov/game_of_life/issues"
+  },
+  "homepage": "https://github.com/gegorov/game_of_life#readme"
+}

@@ -1,5 +1,5 @@
 const readline = require('readline');
-const Game = require('./game');
+const Game = require('./src/game');
 
 const [,, size = 24, speed = 500] = process.argv;
 
