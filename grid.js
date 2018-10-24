@@ -15,7 +15,7 @@ class Grid {
 
       for (let col = 0; col < this.size; col += 1) {
         if (randomize) {
-          const isAlive = Math.random < 0.5;
+          const isAlive = Math.random() < 0.5;
           this.cells[row][col] = new Cell(row, col, isAlive);
         } else {
           this.cells[row][col] = new Cell(row, col);
@@ -25,7 +25,7 @@ class Grid {
   }
 
   isNeighbourAlive(row, col) {
-    if (!this.cells[row] || this.cells[col]) {
+    if (!this.cells[row] || !this.cells[col]) {
       return false;
     }
 
@@ -37,7 +37,6 @@ class Grid {
   countNeighbors(cell) {
     const { row, col } = cell;
     let count = 0;
-
     if (this.isNeighbourAlive(row - 1, col - 1)) {
       count += 1;
     }
@@ -89,22 +88,22 @@ class Grid {
           }
         }
       }
-      this.cells = nextGrid.cells;
     }
+    this.cells = nextGrid.cells;
     return this;
   }
 
   render() {
-    let output = '';
+    let output = '                       < GAME of LIFE >\n';
 
     for (let row = 0; row < this.size; row += 1) {
       for (let col = 0; col < this.size; col += 1) {
         const cell = this.cells[row][col];
 
         if (cell.isAlive) {
-          output = `${output} 🔴 `;
+          output = `${output} ○ `;
         } else {
-          output = `${output} 🔵 `;
+          output = `${output}   `;
         }
 
         if (cell.col === this.size - 1) {
